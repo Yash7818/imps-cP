@@ -17,7 +17,7 @@ int main(){
 				continue;
 			}
 			else
-			dp[j] = 1;
+			dp[j] = cur_ele;
 		}
 //		cout<<dp[cur_ele]<<endl;
 	}
@@ -26,8 +26,21 @@ int main(){
 	}
 	
 	if(dp[m])
-	cout<<"YES";
+	cout<<"YES"<<endl;
 	else
-	cout<<"NO";
+	cout<<"NO"<<endl;
+	
+	
+	//	for printing the subset which forms the sum m
+	if(dp[m]==0)
+	cout<<"-1"<<endl;
+	else{
+		i = m;
+		while(i!=0&&dp[i]!=0){
+			cout<<dp[i]<<" ";
+			i = i - dp[i];
+		}
+	}
+
 }
 
