@@ -4,6 +4,7 @@
 using namespace std;
 int main(){
 //	This program is for finding the minimum cost path to reach at the end from any point.
+// This is for when only down and right movement is allowed.
 	ll n,m,i,j;
 	cin>>n>>m;
 	ll a[n][m];
