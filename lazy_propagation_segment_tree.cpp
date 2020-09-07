@@ -6,15 +6,16 @@ ll a[100000];
 ll st[400000];
 ll lazy[400000];
 
+
 void build(ll si,ll ss,ll se){
 	if(ss==se){
-		st[si] = a[ss];
+		st[si]= a[ss];
 		return;
 	}
 	ll mid = (ss+se)/2;
 	build(2*si,ss,mid);
 	build(2*si+1,mid+1,se);
-	st[si] = st[2*si] + st[2*si+1];
+	st[si]= st[2*si]+ st[2*si+1];
 }
 
 void update(ll si,ll ss ,ll se,ll qs,ll qe,ll x){
