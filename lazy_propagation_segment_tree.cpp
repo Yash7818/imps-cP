@@ -14,7 +14,7 @@ void build(ll si,ll ss,ll se){
 	ll mid = (ss+se)/2;
 	build(2*si,ss,mid);
 	build(2*si+1,mid+1,se);
-	st[si] = st[2*si+1] + st[2*si];
+	st[si] = st[2*si] + st[2*si+1];
 }
 
 void update(ll si,ll ss ,ll se,ll qs,ll qe,ll x){
@@ -32,7 +32,7 @@ void update(ll si,ll ss ,ll se,ll qs,ll qe,ll x){
 	if(ss>qe || se<qs || ss>se){
 		return;
 	}
-	if(ss<=qs && qe<=se){
+	if(ss>=qs && qe>=se){
 		st[si] = (se-ss+1)*x;
 //		lazy[si] += x;
 		if(ss!=se){
@@ -61,9 +61,9 @@ ll query(ll si,ll ss,ll se,ll qs,ll qe){
 		}
 	}
 	
-	if(ss>qe || se<qs || ss>se) return 0;
+	if(ss>qe || se<qs) return 0;
 	
-	if(ss<=qs && qe<=se){
+	if(ss>=qs && qe>=se){
 		return st[si];
 	}
 	
