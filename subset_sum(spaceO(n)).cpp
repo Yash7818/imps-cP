@@ -2,6 +2,25 @@
 #define ll long long int
 using namespace std;
 int main(){
+	/*
+	
+	check from behind if j-curr_ele bit is set
+	if it is then set the current bit
+	
+	A = {2,5,3,4}  M =12
+	
+	dp[] = {1,0,0,0,0,0,0,0,0,0,0,0,0]
+	curr_ele = 2 ---->  dp[] = {1,0,1,0,0,0,0,0,0,0,0,0,0}
+	curr_ele = 5 ---->  dp[] = {1,0,1,0,1,0,1,0,0,0,0,0,0}
+	curr_ele = 3 ---->  dp[] = {1,0,1,1,1,1,1,1,0,1,0,0,0}
+	curr_ele = 4 ---->  dp[] = {1,0,1,1,1,1,1,1,1,1,1,1,1}
+	
+	
+	ultimatly if mth bit is set then m can be formed with A subset
+	
+	
+	*/
+	
 	ll m,n;
 	cin>>n>>m;
 	ll a[n],i,j;
